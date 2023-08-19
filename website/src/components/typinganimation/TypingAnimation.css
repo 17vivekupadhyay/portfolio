@@ -13,11 +13,7 @@
     animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
   }
   
-  .typing-text span.emoji {
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  
+
   .typing-text span.emoji:hover {
     transform-origin: center;
     animation: wave 0.5s infinite;
@@ -27,37 +23,13 @@
     color: #0074d9;
   }
   
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+
+  .typing-animation {
+    font-size: 24px;
+    color: #333;
+    position: relative;
   }
   
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #0074d9;
-    }
+  .typing-text {
+    display: inline-block;
   }
-  
-  @keyframes wave {
-    0%, 100% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(-30deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    75% {
-      transform: rotate(30deg);
-    }
-  }
-  

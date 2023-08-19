@@ -34,17 +34,8 @@
   z-index: 100;
 }
 
-.hamburger-container.active .hamburger-menu {
-  transform: rotate(90deg);
-}
 
-.hamburger-container.active .bar {
-  background-color: #fff;
-}
 
-.hamburger-container.active .nav-overlay {
-  transform: scaleX(1);
-}
 .hamburger-container {
   position: fixed;
   top: 20px;

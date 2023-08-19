@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './TypingAnimation.css';
+import Typed from "react-typed"
+import StyledHeaderButtons from '../navbar/HeaderButtons';
 
 const TypingAnimation = () => {
-  const text = "Hey, 👋 I'm Vivek Upadhyay, a ";
-  const jobTitle = "Fullstack developer.";
+  const text = "Hey, 👋 I'm Vivek Upadhyay, a Fullstack developer. ";
+  const jobTitle = "";
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  /*
+  {
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeoutId = setTimeout(() => {
@@ -21,10 +25,22 @@ const TypingAnimation = () => {
       return () => clearTimeout(jobTimeoutId);
     }
   }, [currentIndex, displayText]);
+}
+*/
 
   return (
     <div className="typing-animation">
-      <span className="typing-text">{displayText}</span>
+      <Typed className='typing-text'
+      strings={[
+            "Hey, 👋 I'm Vivek Upadhyay, Honours Mathematics Student at Waterloo.",
+            "Hey, 👋 I'm Vivek Upadhyay, a Software Developer.",
+            "Hey, 👋 I'm Vivek Upadhyay, an Aspiring Cybersecurity Consultant.",
+          ]}
+          typeSpeed={50}
+          backSpeed={100}
+          loop
+        />
+      <span className="cursor"></span>
     </div>
   );
 };

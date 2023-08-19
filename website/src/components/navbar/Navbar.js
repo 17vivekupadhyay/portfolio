@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ModernMenu from './ModernMenu';
 import './Navbar.css';
 
 function ModernHamburgerButton() {
@@ -9,12 +10,13 @@ function ModernHamburgerButton() {
   };
 
   return (
-    <div className={`hamburger-container ${menuOpen ? 'active' : ''}`}>
-      <div className="hamburger-menu" onClick={toggleMenu}>
+    <div className={`hamburger-container ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+      <div className="hamburger-menu">
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
+      <ModernMenu isOpen={menuOpen} />
     </div>
   );
 }

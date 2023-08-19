@@ -1,4 +1,5 @@
 import React from 'react';
+import './DiscoverButtons.css'; // Import your custom CSS file
 
 const DiscoverButtons = () => {
   const handleResumeClick = () => {
@@ -12,13 +13,13 @@ const DiscoverButtons = () => {
   return (
     <div className="flex justify-center mt-8">
       <button
-        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
+        className="custom-button resume-button"
         onClick={handleResumeClick}
       >
         Resume
       </button>
       <button
-        className="ml-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-200"
+        className="custom-button learn-more-button"
         onClick={handleLearnMoreClick}
       >
         Learn More

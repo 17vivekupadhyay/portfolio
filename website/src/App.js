@@ -3,6 +3,8 @@ import './App.css';
 import TypingAnimation from './components/typinganimation/TypingAnimation';
 import DiscoverButtons from './components/discoverbuttons/DiscoverButtons';
 import ModernHamburgerButton from './components/navbar/Navbar';
+import SpaceInvader from './components/projects/SpaceInvader';
+import projectInfoArray from './components/projects/projectinfo.tsx';
 
 function App() {
   return (
@@ -12,10 +14,14 @@ function App() {
           <div key={index} className="dot"></div>
         ))}
       </div>
-
+      {
+      /*
       <ModernHamburgerButton />
       <TypingAnimation className="TypingAnimation" />
       <DiscoverButtons className="DiscoverButtons" />
+      */
+      }
+      <SpaceInvader numEnemies={projectInfoArray .length} />
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.space-invader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+.spaceship {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  transition: 0.2s ease-in-out;
+}
+
+.bullet {
+  position: absolute;
+  width: 5px;
+  height: 15px;
+  background-color: red;
+  transition: 0.2s ease-in-out;
+}

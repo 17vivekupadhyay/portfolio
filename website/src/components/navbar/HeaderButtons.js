@@ -56,6 +56,7 @@ margin-right: 1px;
 justify-content: flex-end; /* Right justify the buttons */
 position: relative; /* Add position property */
 z-index: 10000; /* Add z-index to ensure the blue border appears above the buttons */
+
   .header__button {
     margin-left: 1px; /* Add margin-left to create spacing between buttons */
     position: relative;

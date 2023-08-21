@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LearnMore from '../LearnMore/learnmore';
 import './DiscoverButtons.css'; // Import your custom CSS file
+import { Link } from 'react-router-dom';
 
 const DiscoverButtons = () => {
+  const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
+
   const handleResumeClick = () => {
-    // Add functionality to open the resume
+    window.open('https://www.overleaf.com/read/gstmqwckrmpg', '_blank');
   };
 
   const handleLearnMoreClick = () => {
-    // Add functionality to navigate to learn more page
+    setIsLearnMoreOpen(prevState => !prevState); // Toggle the state value
   };
 
   return (
@@ -24,6 +28,7 @@ const DiscoverButtons = () => {
       >
         Learn More
       </button>
+      {isLearnMoreOpen && <LearnMore />}
     </div>
   );
 };

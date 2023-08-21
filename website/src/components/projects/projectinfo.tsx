@@ -2,7 +2,7 @@ const projectInfoArray = [
     // projects can be added an removed
     // if there are no projects, Projects section won't show up
     {
-      name: 'Spotify Higher-Lower Game',
+      name: 'Quanticity',
       image: '../images/Spotify.png',
       description:
         '• Utilized Test-Driven Development (TDD) and followed programming best practices to construct a Spotify Higher-Lower game. \

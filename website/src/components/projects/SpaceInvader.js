@@ -51,8 +51,7 @@ const Enemy = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 12px;
-  text-align: center;
+  font-size: 1.5vw;
   cursor: pointer;
 `;
 
@@ -104,28 +103,43 @@ const SpaceInvader = ({ numEnemies }) => {
       return prevBullets
         .map((bullet) => ({
           x: bullet.x,
-          y: bullet.y + bulletSpeed, // Change to subtract bullet speed
+          y: bullet.y + bulletSpeed,
         }))
         .filter((bullet) => bullet.y > 0);
     });
   
-    bullets.forEach((bullet, bulletIndex) => {
-      enemyPositions.forEach((enemyX, enemyIndex) => {
-        const bulletHitEnemyX = Math.abs(bullet.x - enemyX);
-        const bulletHitEnemyY = bullet.y;
-    
-        if (bulletHitEnemyX <= bulletEnemyCollisionDistance && bulletHitEnemyY <= bulletEnemyCollisionDistance) {
-          setShowPopup(true);
-          setHitEnemyIndex(enemyIndex);
-          setBullets((prevBullets) => {
-            const updatedBullets = [...prevBullets];
-            updatedBullets[bulletIndex].y = -10; // Move the bullet off-screen
-            return updatedBullets;
-          });
-        }
+    setEnemyPositions((prevEnemyPositions) => {
+      const updatedEnemyPositions = [...prevEnemyPositions];
+  
+      bullets.forEach((bullet, bulletIndex) => {
+        prevEnemyPositions.forEach((enemyX, enemyIndex) => {
+          const bulletHitEnemyX = Math.abs(bullet.x - enemyX);
+          const bulletHitEnemyY = containerRef.current.clientHeight - bullet.y;
+  
+          if (
+            bulletHitEnemyX <= bulletEnemyCollisionDistance &&
+            bulletHitEnemyY <= bulletEnemyCollisionDistance
+          ) {
+            console.log("hit"); // Log "hit" to the console
+  
+            updatedEnemyPositions[enemyIndex] = -100; // Move the enemy off-screen
+  
+            setBullets((prevBullets) => {
+              const updatedBullets = [...prevBullets];
+              updatedBullets[bulletIndex].y = -10; // Move the bullet off-screen
+              return updatedBullets;
+            });
+  
+            setShowPopup(true);
+            setHitEnemyIndex(enemyIndex);
+          }
+        });
       });
+  
+      return updatedEnemyPositions;
     });
   };
+  
   
   
 

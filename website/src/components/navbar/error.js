@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import error from './hi.png';
 import StyledHeaderButtons from './HeaderButtons';
+import error from './hi.png';
+import { Link } from 'react-router-dom';
+
 
 function lineBreak(str) {
   return str.split('\n').map((s, i) => (
@@ -68,27 +70,27 @@ function Error({ onClose, message = "Hi There!" }) {
         <div className="error__messages">{lineBreak(message)}</div>
       </div>
       <div className="error__bottom">
-        <div onClick={onClose} className="error__button">
-          <span className="error__confirm">About</span>
-        </div>
-        <div onClick={onClose} className="error__button">
+        <Link to="/home" className="error__button">
+          <span className="error__confirm">Home</span>
+        </Link>
+        <Link to="/projects" className="error__button">
           <span className="error__confirm">Projects</span>
-        </div>
-        <div onClick={onClose} className="error__button">
+        </Link>
+        <Link to="/skills" className="error__button">
           <span className="error__confirm">Skills</span>
-        </div>
-        <div onClick={onClose} className="error__button">
+        </Link>
+        <Link to="/timeline" className="error__button">
           <span className="error__confirm">Timeline</span>
-        </div>
-        <div onClick={onClose} className="error__button">
+        </Link>
+        <Link to="/github" className="error__button">
           <span className="error__confirm">Github</span>
-        </div>
-        <div onClick={onClose} className="error__button">
+        </Link>
+        <Link to="/contact" className="error__button">
           <span className="error__confirm">Get in Touch</span>
-        </div>
-        <div onClick={onClose} className="error__button" style={{ gridColumn: 'span 3' }}>
-            <span className="error__confirm">Extras</span>
-        </div>
+        </Link>
+        <Link to="/extras" className="error__button" style={{ gridColumn: 'span 3' }}>
+          <span className="error__confirm">Extras</span>
+        </Link>
       </div>
     </Div>
   );
@@ -96,18 +98,18 @@ function Error({ onClose, message = "Hi There!" }) {
 
 const Div = styled.div`
   background-color: #f5f5f5;
-  width: 300px; /* Change to your desired width */
+  width: 300px;
   height: auto;
   font-size: 11px;
   display: flex;
   flex-direction: column;
   border: 3px solid #0054e9;
   position: absolute;
-  left: 0; /* Adjust this based on your needs */
-  top: 0; /* Adjust this based on your needs */
+  left: 0;
+  top: 0;
   z-index: 1000;
+  justify-content: flex-end;
 
-justify-content: flex-end;
   .error__top {
     display: flex;
     flex: 1;

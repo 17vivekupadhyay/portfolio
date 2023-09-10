@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import spaceshipImage from './spaceship.png'; // Import the spaceship image
-import enemyImage from './enemy.png'; // Import the enemy image
-import TitleImage from './title.png'; // Import the title image
-import projectInfoArray from './projectinfo.tsx'; // Import the project info array
+import spaceshipImage from './spaceship.png';
+import enemyImage from './enemy.png';
+import TitleImage from './title.png';
+import projectInfoArray from './projectinfo.tsx';
 import ModernHamburgerButton from '../navbar/Navbar';
 
 const Container = styled.div`
@@ -78,7 +78,7 @@ const SpaceInvader = ({ numEnemies }) => {
   const spaceshipSpeed = 20;
   const bulletSpeed = 10;
   const frameRate = 60;
-  const bulletEnemyCollisionDistance = 60; // Adjust this distance as needed
+  const bulletEnemyCollisionDistance = 60;
 
   const [spaceshipX, setSpaceshipX] = useState(0);
   const [bullets, setBullets] = useState([]);
@@ -107,41 +107,27 @@ const SpaceInvader = ({ numEnemies }) => {
         }))
         .filter((bullet) => bullet.y > 0);
     });
-  
-    setEnemyPositions((prevEnemyPositions) => {
-      const updatedEnemyPositions = [...prevEnemyPositions];
-  
-      bullets.forEach((bullet, bulletIndex) => {
-        prevEnemyPositions.forEach((enemyX, enemyIndex) => {
-          const bulletHitEnemyX = Math.abs(bullet.x - enemyX);
-          const bulletHitEnemyY = containerRef.current.clientHeight - bullet.y;
-  
-          if (
-            bulletHitEnemyX <= bulletEnemyCollisionDistance &&
-            bulletHitEnemyY <= bulletEnemyCollisionDistance
-          ) {
-            console.log("hit"); // Log "hit" to the console
-  
-            updatedEnemyPositions[enemyIndex] = -100; // Move the enemy off-screen
-  
-            setBullets((prevBullets) => {
-              const updatedBullets = [...prevBullets];
-              updatedBullets[bulletIndex].y = -10; // Move the bullet off-screen
-              return updatedBullets;
-            });
-  
-            setShowPopup(true);
-            setHitEnemyIndex(enemyIndex);
-          }
-        });
+
+    bullets.forEach((bullet, bulletIndex) => {
+      enemyPositions.forEach((enemyX, enemyIndex) => {
+        const bulletHitEnemyX = Math.abs(bullet.x - enemyX);
+        const bulletHitEnemyY = containerRef.current.clientHeight - bullet.y;
+
+        if (
+          bulletHitEnemyX <= bulletEnemyCollisionDistance &&
+          bulletHitEnemyY <= bulletEnemyCollisionDistance
+        ) {
+          setShowPopup(true);
+          setHitEnemyIndex(enemyIndex);
+          setBullets((prevBullets) => {
+            const updatedBullets = [...prevBullets];
+            updatedBullets[bulletIndex].y = -10;
+            return updatedBullets;
+          });
+        }
       });
-  
-      return updatedEnemyPositions;
     });
   };
-  
-  
-  
 
   const handleKeyDown = (event) => {
     if (event.key === 'ArrowLeft') {
@@ -182,7 +168,7 @@ const SpaceInvader = ({ numEnemies }) => {
       moveBullets();
     }, 1000 / frameRate);
 
-    updateEnemyPositions(); // Initial positions
+    updateEnemyPositions();
 
     window.addEventListener('resize', updateEnemyPositions);
 
@@ -224,6 +210,5 @@ const SpaceInvader = ({ numEnemies }) => {
     </Container>
   );
 };
-  
 
 export default SpaceInvader;

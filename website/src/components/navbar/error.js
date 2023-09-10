@@ -85,10 +85,13 @@ function Error({ onClose, message = "Hi There!" }) {
         <Link to="/github" className="error__button">
           <span className="error__confirm">Github</span>
         </Link>
+        <Link to="/LinkedIn" className="error__button">
+          <span className="error__confirm">LinkedIn</span>
+        </Link>
         <Link to="/contact" className="error__button">
           <span className="error__confirm">Get in Touch</span>
         </Link>
-        <Link to="/extras" className="error__button" style={{ gridColumn: 'span 3' }}>
+        <Link to="/extras" className="error__button">
           <span className="error__confirm">Extras</span>
         </Link>
       </div>

@@ -62,16 +62,52 @@ const projectInfoArray = [
     livePreview: 'https://github.com',
   },
   {
-    name: 'Personal Portfolio',
+    name: 'AdviceU.ca',
     description:
-      'Created this personal Portfolio to demonstrate skills and achievements.\
-       Utilied hooks and useStates to build an interactive website,\
-       Exhausted  knoweldge in building an aesthetically pleasing webistes to \
-       develop this site from scratch.',
-    stack: ['Node.js', 'React', 'HTML', 'CSS'],
+      'Co-founded a startup alongside a business partner, centered around providing comprehensive support to aspiring university applicants in their journey toward securing spots in their desired institutions. Our innovative full-stack application, meticulously crafted with Typescript, ReactJs, Node.js, Firebase, and Email.js, reflects our commitment to excellence. Adhering to programming best practices, the platform encompasses extensively tested API calls and meticulously developed website components, all rigorously evaluated using Jest. This undertaking showcases our dedication to guiding prospective students through a seamless experience while upholding the highest standards of software development.',
+    stack: [
+      'Jest',
+      'Test-Driven Development',
+      'TypeScript',
+      'Firebase',
+      'Collaborative Problem Solving',
+      'Community Outreach',
+      'Databases',
+      'React.js',
+      'Node.js',
+    ],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
-  ]
+  {
+    name: 'CyberAI',
+    description:
+      'CyberBot is an innovative AI-powered chatbot designed to revolutionize the way users engage with cybersecurity information. This interactive platform combines advanced natural language processing (NLP) with modern design elements to create a seamless and educational user experience. Whether you\'re a cybersecurity enthusiast or someone seeking quick answers to security-related queries, CyberBot is your go-to assistant.',
+    stack: [
+      'Artificial Intelligence (AI)',
+      'Natural Language Processing (NLP)',
+      'React.js',
+      'Node.js',
+    ],
+    sourceCode: 'https://github.com/17vivekupadhyay/cyberbot',
+    livePreview: 'https://github.com/17vivekupadhyay/cyberbot',
+  },
+  {
+    name: 'PinPointer',
+    description:
+      'This software utilizes Python in conjunction with Wireshark to meticulously dissect network traffic. Its primary objective is to derive informed insights regarding potential vulnerabilities within the organization\'s network infrastructure. Through the integration of the Google Geolocation API, this application further enriches its functionality by meticulously mapping the origin of each connection onto an interactive geographical interface. This not only enhances the analytical process but also presents a visually intuitive representation of the network\'s connections.',
+    stack: ['Cybersecurity', 'Networking', 'Wireshark', 'Python (Programming Language)'],
+    sourceCode: 'https://github.com',
+    livePreview: 'https://github.com',
+  },
+  {
+    name: 'Spam Or Ham',
+    description:
+      'Using Python\'s Scikit-Learn library, I designed a sophisticated spam or ham email filtering system that harnessed the synergy of cybersecurity principles and AI advancements. This project, aimed at countering Business Email Compromise (BEC), showcased my ability to merge cutting-edge technologies for practical solutions. By automating the discernment between legitimate and malicious emails, the system achieved a remarkable efficiency improvement of nearly 90%. Through meticulous dataset preprocessing, classifier selection, and comprehensive statistical evaluation, the project highlighted my capacity to innovate at the crossroads of AI and cybersecurity, contributing to heightened email security and threat mitigation.',
+    stack: ['Scikit-Learn', 'Machine Learning', 'Cybersecurity', 'Python (Programming Language)'],
+    sourceCode: 'https://github.com',
+    livePreview: 'https://github.com',
+  },
+];
 
 export default projectInfoArray;

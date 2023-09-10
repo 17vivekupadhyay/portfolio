@@ -13,6 +13,7 @@ import GitHubLink from './components/github/github';
 import ContactPage from './components/contactpage/ContactPage';
 import UserInputComponent from './Extras/extra';
 import Abyss from './Extras/Abyss/absa';
+import LinkedInLink from './components/Linkden/linkden';
 
 const skillsData = [
   'React',
@@ -35,6 +36,7 @@ function App() {
           <Route path="/skills" element={<EndCredits skills={skillsData} />} />
           <Route path="/timeline" element={<TimeLine />} />
           <Route path="/github" element={<GitHubLink />} />
+          <Route path="/linkedin" element={<LinkedInLink />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/extras" element={ <UserInputComponent />} />
           <Route path="/ABYSS" element={ <Abyss />} />
